@@ -1,14 +1,22 @@
-This is a very simple assembler example.
+This is a very simple assembler example for use on a Nucleo-L432KC board.
 
-# Advanced
+Build with `make`, clean with 'make clean', `make` command is needed.
 
-Sections .data and .bss needed more startup code to work like in C.
+The arm-none-eabi toolchain must be on the path.
+Available from https://www.st.com/en/development-tools/stm32cubeclt.html
 
-Section aligment is sloppy.
+Execute by copying the resulting .bin file onto the Nucleo-L432KC "USB drive".
 
-Check .elf file with
+Build and debug with VS Code: Open the *folder*, use the STM32 VS Code Extension.
 
-`arm-none-eabi-readelf -e main.elf`
 
-Disassemble:
-`arm-none-eabi-objdump -d main.elf`
+The MCU has a Arm Cortex-M4 core. 
+For didactical reasons, we use only a subset of instructions 
+corresponding to an Arm Cortex-M0 or Arm Cortex-M0+. 
+
+Help with the instrucion set and the Arm Cortex core:
+-  STM32 Cortex®-M0+ MCUs programming manual
+- https://developer.arm.com/documentation/ddi0419/c/Application-Level-Architecture/The-ARMv6-M-Instruction-Set
+
+Help with GPIO registers and ST peripherals in the MCU:
+- STM RM0394 Reference manual
