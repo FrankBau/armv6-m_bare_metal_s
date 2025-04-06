@@ -1,9 +1,13 @@
 This is a very simple assembler example for use on a Nucleo-L432KC board.
 
-Build with `make`, clean with 'make clean', `make` command is needed.
-
 The arm-none-eabi toolchain must be on the path.
 Available from https://www.st.com/en/development-tools/stm32cubeclt.html
+
+Build with `make`, clean with 'make clean', `make` command is needed.
+
+Alternative build with cmake:
+`cmake -G Ninja -B build`
+`ninja -C build`
 
 Execute by copying the resulting .bin file onto the Nucleo-L432KC "USB drive".
 
