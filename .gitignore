@@ -5,3 +5,7 @@ build/
 *.elf
 *.list
 *.hex
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+*.ninja

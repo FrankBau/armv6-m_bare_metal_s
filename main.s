@@ -17,12 +17,15 @@ isr_vector:                     // vector table for the interrupt service routin
 .global   _start                // declare the symbol '_start' as globally visible
 .type     _start, %function     // declare '_start' as a function
 _start:
-        ldr  r0, =0x4002104C
+_start:
+        ldr  r0, =0x40021000
         movs r1, #3
-        str  r1, [r0]
+        str  r1, [r0, #0x4C]
         ldr  r0, =0x48000400
         ldr  r1, =0xffffff7f
         str  r1, [r0]
-        movs r1, #0x08
-        str  r1, [r0, 0x14]    
-        b .
+L1:     movs r1, #0x00
+        str  r1, [r0, #0x14]
+L2:     movs r1, #0x08
+        str  r1, [r0, #0x14]
+        b L1
